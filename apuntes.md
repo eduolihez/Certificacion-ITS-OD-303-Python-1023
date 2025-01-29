@@ -1,130 +1,214 @@
-**Teoría Detallada por Tema**
+## **Tema 1: Operaciones con Tipos de Datos y Operadores**
 
-### Tema 1: Operaciones con tipos de datos y operadores
-1. **Tipos de Datos:**
-   - `str`: Cadenas de texto, representadas entre comillas simples o dobles. Ejemplo: `'Hola'`, `"Python"`.
-   - `int`: Números enteros, como `42` o `-7`.
-   - `float`: Números con decimales, como `3.14` o `-0.001`.
-   - `bool`: Valores lógicos, `True` o `False`, utilizados para decisiones y condiciones.
+### **1. Tipos de Datos Básicos**
+- **`str` (string):**
+  - Secuencia inmutable de caracteres. Ejemplo: `"Hola"`, `'Python'`.
+  - Operaciones comunes: concatenación (`+`), repetición (`*`), longitud (`len()`).
+- **`int` (entero):**
+  - Números sin decimales. Ejemplo: `42`, `-7`.
+  - Límites: dependen de la memoria.
+- **`float` (flotante):**
+  - Números con decimales. Ejemplo: `3.14`, `-0.001`.
+  - Precisión: puede haber errores de redondeo (ej: `0.1 + 0.2 = 0.30000000000000004`).
+- **`bool` (booleano):**
+  - Valores `True` o `False`.
+  - Se usan en condiciones y operaciones lógicas.
 
-2. **Operaciones con Datos:**
-   - **Conversión de Tipos:** Cambiar entre tipos de datos usando funciones como `int()`, `float()`, `str()`, etc. Ejemplo: convertir un string a entero con `int("123")`.
-   - **Indexación y Slicing:** Acceso a elementos individuales o partes de secuencias (listas, cadenas). Indexación empieza desde 0.
+### **2. Conversión de Tipos**
+- **Funciones clave:**
+  - `int()`: Convierte a entero. Ejemplo: `int("123") → 123`.
+  - `float()`: Convierte a flotante. Ejemplo: `float(5) → 5.0`.
+  - `str()`: Convierte a string. Ejemplo: `str(3.14) → "3.14"`.
+  - `bool()`: Evalúa si un valor es verdadero o falso (0, `""`, `None` son `False`).
 
-3. **Operadores:**
-   - **Aritméticos:** Realizan operaciones matemáticas.
-     - `+`: Suma.
-     - `-`: Resta.
-     - `*`: Multiplicación.
-     - `/`: División.
-     - `//`: División entera (redondea hacia abajo).
-     - `%`: Módulo (resto de una división).
-     - `**`: Potenciación.
-   - **Comparación:** Devuelven un valor booleano (`True` o `False`).
-     - `==`: Igual a.
-     - `!=`: Distinto de.
-     - `>`: Mayor que.
-     - `<`: Menor que.
-     - `>=`: Mayor o igual que.
-     - `<=`: Menor o igual que.
-   - **Lógicos:** Combina o invierte condiciones.
-     - `and`: Devuelve `True` si ambas condiciones son verdaderas.
-     - `or`: Devuelve `True` si al menos una condición es verdadera.
-     - `not`: Invierte el valor de verdad.
-   - **De Asignación:** Asignan valores a variables.
-     - `=`: Asignación simple.
-     - `+=`: Suma y asigna.
-     - `-=`: Resta y asigna.
+### **3. Operaciones con Secuencias**
+- **Indexación:**
+  - Acceso a elementos: `cadena[0]` (primer carácter).
+  - Índices negativos: `cadena[-1]` (último carácter).
+- **Slicing:**
+  - Sintaxis: `[inicio:fin:paso]`.
+  - Ejemplo: `"Python"[2:4] → "th"`.
 
-4. **Precedencia de Operadores:**
-   - El orden de ejecución está definido por la precedencia. Ejemplo: multiplicación y división tienen mayor precedencia que suma y resta.
-   - Paréntesis pueden usarse para alterar la precedencia.
+### **4. Operadores**
+- **Aritméticos:**
+  - `//`: División entera (`7 // 2 → 3`).
+  - `%`: Módulo (resto de división: `7 % 2 → 1`).
+  - `**`: Potencia (`2 ** 3 → 8`).
+- **Comparación:**
+  - `==`, `!=`, `>`, `<`, `>=`, `<=`.
+  - Se pueden encadenar: `1 < x <= 5`.
+- **Lógicos:**
+  - `and`: `True` si ambos operandos son `True`.
+  - `or`: `True` si al menos uno es `True`.
+  - `not`: Invierte el valor (`not True → False`).
+- **Asignación:**
+  - `=`, `+=`, `-=`, `*=`, etc. Ejemplo: `x += 5` equivale a `x = x + 5`.
 
----
-
-### Tema 2: Control de flujo con decisiones y bucles
-1. **Sentencias Condicionales:**
-   - Permiten ejecutar diferentes bloques de código dependiendo de una condición.
-     - `if`: Ejecuta el bloque si la condición es verdadera.
-     - `elif`: Evalúa una nueva condición si las anteriores son falsas.
-     - `else`: Se ejecuta si ninguna de las condiciones anteriores es verdadera.
-
-2. **Bucles:**
-   - **`for`:** Itera sobre una secuencia (listas, cadenas, etc.).
-   - **`while`:** Ejecuta un bloque de código mientras una condición sea verdadera.
-   - **Control de flujo dentro de bucles:**
-     - `break`: Termina el bucle inmediatamente.
-     - `continue`: Salta a la siguiente iteración.
-     - `pass`: No realiza ninguna acción, sirve como marcador de lugar.
+### **5. Precedencia de Operadores**
+1. Paréntesis `()`.
+2. Potencia `**`.
+3. Multiplicación `*`, División `/`, Módulo `%`.
+4. Suma `+`, Resta `-`.
+5. Comparación (`<`, `>`, etc.).
+6. Operadores lógicos: `not`, `and`, `or`.
 
 ---
 
-### Tema 3: Operaciones de entrada y salida
-1. **Archivos:**
-   - `open()`: Abre un archivo.
-     - Modos: `'r'` (lectura), `'w'` (escritura, sobrescribe), `'a'` (adjuntar).
-   - `read()`: Lee el contenido del archivo.
-   - `write()`: Escribe datos en el archivo.
-   - `close()`: Cierra el archivo.
-   - Verificar existencia con `os.path.exists()`.
+## **Tema 2: Control de Flujo con Decisiones y Bucles**
 
-2. **Consola:**
-   - `input()`: Solicita datos al usuario desde el teclado.
-   - `print()`: Muestra datos en la consola.
-   - Formatos avanzados:
-     - `string.format()`: Formatea cadenas.
-     - `f-strings`: Usan expresiones directamente dentro de cadenas (Python 3.6+).
+### **1. Condicionales**
+```python
+# Ejecuta el bloque si la condición es verdadera.
+if condicion1: 
+# Evalúa una nueva condición si las anteriores son falsas.
+elif condicion2:
+# Se ejecuta si ninguna de las condiciones anteriores es verdadera.
+else:
+```
+
+### **2. Bucles**
+- **`for`:** Itera sobre elementos de una secuencia.
+  ```python
+  for i in range(5):  # 0, 1, 2, 3, 4
+      print(i)
+  ```
+- **`while`:** Ejecuta mientras una condición sea `True`.
+  ```python
+  n = 0
+  while n < 5:
+      print(n)
+      n += 1
+  ```
+
+### **3. Control de Bucles**
+- **`break`:** Termina el bucle.
+  ```python
+  for i in range(10):
+      if i == 5:
+          break  # Sale del bucle
+  ```
+- **`continue`:** Salta a la siguiente iteración.
+  ```python
+  for i in range(5):
+      if i == 2:
+          continue  # Salta la iteración actual
+      print(i)
+  ```
+- **`pass`:** Marca una posición sin código (útil para estructuras vacías).
+
+---
+
+## **Tema 3: Operaciones de Entrada y Salida**
+
+### **1. Archivos**
+- **Abrir y cerrar:**
+  ```python
+  archivo = open("archivo.txt", "r")  # Modos: 'r' (lectura), 'w' (escritura), 'a' (añadir)
+  contenido = archivo.read()  # Lee todo el contenido
+  archivo.close()
+  ```
+- **Manejo seguro con `with`:**
+  ```python
+  with open("archivo.txt", "r") as archivo:
+      lineas = archivo.readlines()  # Lista de líneas
+  ```
+
+### **2. Consola**
+- **Entrada:**
+  ```python
+  nombre = input("Ingresa tu nombre: ")  # Devuelve un string
+  ```
+- **Salida formateada:**
+  - **`f-strings` (recomendado):**
+    ```python
+    edad = 25
+    print(f"Tienes {edad} años.")
+    ```
+  - **`.format()`:**
+    ```python
+    print("Tienes {} años.".format(edad))
+    ```
 
 ---
 
-### Tema 4: Documentación y estructura del código
-1. **Comentarios y Docstrings:**
-   - **Comentarios:** Usan `#` para explicar partes del código.
-   - **Docstrings:** Se utilizan para documentar funciones, clases o módulos. Rodeados de triple comillas (`"""`).
+## **Tema 4: Documentación y Estructura del Código**
 
-2. **Funciones:**
-   - **Definición:** Se crean usando `def` seguido del nombre y paréntesis.
-   - **Parámetros por defecto:** Se pueden asignar valores predeterminados a los parámetros.
-   - **Retorno de valores:** Usa `return` para devolver resultados.
+### **1. Comentarios y Docstrings**
+- **Comentarios de una línea:**
+  ```python
+  # Esto es un comentario
+  ```
+- **Docstrings (documentación):**
+  ```python
+  def suma(a, b):
+      """Suma dos números y devuelve el resultado."""
+      return a + b
+  ```
+
+### **2. Funciones**
+- **Parámetros por defecto:**
+  ```python
+  def saludar(nombre="Usuario"):
+      print(f"Hola, {nombre}!")
+  ```
+- **Retorno múltiple:**
+  ```python
+  def operaciones(a, b):
+      return a + b, a - b  # Devuelve una tupla
+  ```
+
+---
+
+## **Tema 5: Depuración y Manejo de Errores**
+
+### **1. Tipos de Errores**
+- **Sintaxis:** `SyntaxError` (ej: `print("Hola"` sin cerrar paréntesis).
+- **Ejecución:** `ZeroDivisionError`, `TypeError`, `FileNotFoundError`.
+
+### **2. Manejo de Excepciones**
+```python
+try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("No se puede dividir entre cero.")
+else:
+    print("Todo funcionó bien.")
+finally:
+    print("Este bloque siempre se ejecuta.")
+```
 
 ---
 
-### Tema 5: Depuración y manejo de errores
-1. **Tipos de Errores:**
-   - **Sintaxis:** Errores de escritura que impiden la ejecución.
-   - **Lógica:** El código se ejecuta, pero no produce el resultado esperado.
-   - **Ejecución:** Ocurren mientras el programa está corriendo, como dividir entre cero.
+## **Tema 6: Módulos y Herramientas**
 
-2. **Manejo de Excepciones:**
-   - Bloques clave:
-     - `try`: Contiene el código que puede generar una excepción.
-     - `except`: Captura y maneja la excepción.
-     - `else`: Opcional, ejecuta si no hay excepción.
-     - `finally`: Opcional, siempre se ejecuta.
+### **1. Módulos Comunes**
+- **`math`:**
+  ```python
+  import math
+  print(math.sqrt(25))  # 5.0
+  ```
+- **`datetime`:**
+  ```python
+  from datetime import datetime
+  fecha = datetime.now()
+  print(fecha.strftime("%d/%m/%Y"))  # Formato: 21/10/2023
+  ```
+- **`random`:**
+  ```python
+  import random
+  print(random.randint(1, 10))  # Número aleatorio entre 1 y 10
+  ```
 
----
-
-### Tema 6: Uso de módulos y herramientas
-1. **Módulos Comunes:**
-   - **`os`:** Proporciona funciones para interactuar con el sistema operativo (crear, eliminar directorios, listar archivos, etc.). Ejemplo: `os.listdir()` para listar archivos en un directorio.
-   - **`sys`:** Permite acceder a parámetros del sistema y manejar argumentos de la línea de comandos. Ejemplo: `sys.argv` para acceder a argumentos.
-   - **`math`:** Incluye funciones matemáticas avanzadas como `sqrt()` (raíz cuadrada), `pow()` (potenciación), `fabs()` (valor absoluto).
-   - **`datetime`:** Proporciona herramientas para trabajar con fechas y horas. Ejemplo: `datetime.now()` devuelve la fecha y hora actual.
-   - **`random`:** Genera valores aleatorios. Ejemplo: `random.choice()` selecciona un elemento al azar de una lista.
-
-2. **Operaciones Específicas:**
-   - **Sistema de Archivos y Línea de Comandos:**
-     - `os.path.exists(ruta)`: Verifica si un archivo o directorio existe.
-     - `sys.argv`: Obtiene argumentos pasados por línea de comandos.
-   - **Cálculos Matemáticos:**
-     - `math.ceil(numero)`: Redondea al entero más cercano hacia arriba.
-     - `math.floor(numero)`: Redondea hacia abajo.
-     - `math.pi`: Proporciona el valor de pi.
-   - **Fechas y Horas:**
-     - `datetime.strftime(formato)`: Convierte una fecha en un string con el formato deseado.
-     - `datetime.weekday()`: Devuelve el día de la semana (0 es lunes).
-   - **Generación Aleatoria:**
-     - `random.randint(a, b)`: Genera un entero aleatorio entre `a` y `b`.
-     - `random.shuffle(lista)`: Mezcla aleatoriamente los elementos de una lista.
+### **2. Argumentos de Línea de Comandos**
+```python
+import sys
+print("Argumentos recibidos:", sys.argv)  # Ejemplo: python script.py arg1 arg2
+```
 
 ---
+
+## **Consejos para el Examen**
+1. **Práctica con Ejercicios:** Resuelve problemas que involucren todos los temas.
+2. **Repasa Excepciones Comunes:** Como `IndexError` o `KeyError`.
+3. **Usa la Documentación Oficial:** Es clave para entender módulos estándar.
+4. **Domina el Manejo de Archivos:** Es un tema frecuente en certificaciones.
